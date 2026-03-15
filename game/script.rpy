@@ -19,7 +19,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene airport
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -56,15 +56,17 @@ label start:
             $ where_to = "dont_follow_ae"
             jump end
 
-
-    # if where_to == "follow_ae":
-    show Maya normal
+    scene airport two
     
     n "Maya follows the airport employee to a different part of the terminal."
 
     ae "Here is the flight to New York. You must board now."
 
+    show Maya confused
+
     m "But.. but my luggage? It's still on the other flight."
+
+    show Airport Employee normal
 
     ae "Don't worry about it. I'll take care of it for you."
 
@@ -77,13 +79,18 @@ label start:
             $ where_to = "dont_board_flight"
             jump end
 
+
+    scene black bg
+
     n "Maya boards the flight and ..."
+
+    scene dragonia
+
+    show Maya surprised
 
     n "somehow doesn't enter an airplane?"
 
     n "While she stepped into a plane on one door side, the other door side is a portal to another world."
-
-    show Maya surprised
 
     m "Oh... my... what is this place? Where am I?"
 
@@ -123,11 +130,19 @@ label start:
 
     n "Droy walks off and you have no choice but to follow."
 
+    show Maya normal
+
     n "For the first time since the initial shock, Maya gets to look around at her surroundings and take it all in."
 
     n "There are big green trees everywhere. They have exotic fruits the size of her head growing in all colors. Also on the trees were..."
 
+    scene trees close up
+
+    show Maya surprised
+
     m "DRAGONS?! Real dragons! Not half human ones!"
+
+    show Droy annoyed
 
     d "Yes, real dragons. Did you think Dragonia, the world of dragons only had half-dragons?"
 
@@ -137,13 +152,35 @@ label start:
 
     m "Hm. Okay. So... what's my job?"
 
-    n "Droy stops abrubtly and turns to Maya, saying"
+    show Droy normal
+
+    n "Droy stops abrubtly and turns to Maya, saying:"
 
     d "Do you see these trees? These plants? These fruits? Humans destroyed these. We need you to save them."
 
     n "And how exactly do you expect me to save them?"
 
     d "Well for one, you are going back into the human world to show humans they need to stop littering and control climate change."
+
+    m "Easier said than done..."
+
+    d "Yes. Also, you need to prove yourself to us. That's your first job."
+
+    m "Ookkaayyy... And how?"
+
+    d "Through a series of challenges."
+
+    d "Over the next couple of days you will be presented with a series of challenges to prove you can be a worthy dragon representative."
+
+    show Maya excited
+
+    m "Will I get my own wings?!"
+
+    show Maya sad
+
+    d "Hmpf. No, of course not."
+
+    
 
     # This ends the game. 
 
