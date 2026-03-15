@@ -210,6 +210,8 @@ label start:
 
     d "You have a day to rest. Tomorrow we will test your BLANKSSKS"
 
+    scene dragonia house
+
     n "Droy leads Maya to a little alcove in a tree."
 
     d "This is where you'll rest for the remainder of your stay."
@@ -221,6 +223,72 @@ label start:
     show black bg
 
     "DAY 2"
+
+    show dragonia house
+
+    n "The next morning, Maya wakes up a little before dawn."
+
+    show Maya tired
+
+    m "Oof... I'm still exhousted... hopefully today isn't bad."
+
+    d "Not bad today? Well, we'll see about that. Follow me."
+
+    show Maya surprised
+
+    m "You scared me! You're here early!"
+
+    show Droy annoyed
+
+    d "What did you expect? I said dawn. It's five minutes till dawn. Lets go."
+
+    scene dragonia
+
+    d "Your challenge for today is BLANKSS"
+
+    #insert challenge 2 here
+
+    show Droy surprised
+
+    d "Wow, you did it again. Maybe you are worthy..."
+
+    show Maya tired
+
+    m "Yes! While this is definetly an unconventional job... I'm glad I'm doing this."
+
+    m "Wait, I do get payed, right?!"
+
+    show Droy smirk
+
+    d "HAHAHAHAhahaha..."
+
+    show Maya scared
+
+    m "Um Droy? I DO get payed, RIGHT?!"
+
+    d "In an unconventional sense, yes, you do get payed."
+
+    show Maya confused
+
+    m "And that unconventional sense is...?"
+
+    d "Well, if you pass all our tests, and become a dragon representative, you'll have free housing and food here in Dragonia which will be open to you at all times."
+
+    m "Oh... I see. So I won't get paid in money, but I will get free food and housing here. Hm. I guess that's not too bad."
+
+    m "And a stable job too... right?"
+    
+    show Droy normal
+
+    d "You'll be sent on missions for us. You can have a human job on the side if you want."
+
+    m "Okay... I'm going to head to rest now. I'll see you tomorrow before dawn?"
+
+    d "Indeed you will."
+
+    scene black big
+
+    "DAY 3"
 
     # This ends the game. 
 
