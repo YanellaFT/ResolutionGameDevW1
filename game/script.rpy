@@ -128,6 +128,8 @@ label start:
     elif where_to == "stay":
         d "Great! Follow me, I'll show you around while we talk."
 
+    "DAY 1"
+
     n "Droy walks off and you have no choice but to follow."
 
     show Maya normal
@@ -151,6 +153,8 @@ label start:
     d "I've been a human representative for Dragonia for many many hundreds of years. The High King gifted them to me for my service."
 
     m "Hm. Okay. So... what's my job?"
+
+    scene dragonia
 
     show Droy normal
 
@@ -180,7 +184,43 @@ label start:
 
     d "Hmpf. No, of course not."
 
-    
+    m "Oh. Okay."
+
+    show Maya normal
+
+    m "So, what's my first challenge?"
+
+    d "You have three challenges you need to complete in three days. "
+
+    d "Your first challenge is ..."
+
+    #insert challenge 1 here
+
+    show Droy annoyed
+
+    d "Well... a surprise indeed. You passed your first challenge."
+
+    show Maya tired
+
+    m "Well... it wasn't that bad..."
+
+    n "In reality, it kind of was. Maya is huffing and puffing from her attempt."
+
+    show Droy normal
+
+    d "You have a day to rest. Tomorrow we will test your BLANKSSKS"
+
+    n "Droy leads Maya to a little alcove in a tree."
+
+    d "This is where you'll rest for the remainder of your stay."
+
+    d "I'll meet you at dawn tomorrow."
+
+    n "Maya falls asleep instantly."
+
+    show black bg
+
+    "DAY 2"
 
     # This ends the game. 
 
