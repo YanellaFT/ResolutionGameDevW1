@@ -1,4 +1,9 @@
-﻿# The script of the game goes in this file.
+﻿init python:
+    def slider_update(sT):
+        pass
+
+
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -192,9 +197,28 @@ label start:
 
     d "You have three challenges you need to complete in three days. "
 
-    d "Your first challenge is ..."
+    d "Your first challenge will test your reaction rate."
 
-    #insert challenge 1 here
+    "Click on the screen only when the slider is in the green zone. You have three attempts to pass this challenge."
+
+
+    #challenge 1: slider challenge to test reactionn
+    $ slider_SM = SpriteManager(update = slider_update)
+    $ slider_sprites = []
+    $ slider_bar_size = (int(545 / 2), int(70 / 2))
+
+    $ attempts_left = 3
+    frame:
+        background "#FFFFFF"
+        padding (5, 5)
+        allign (0.5, 0.3)
+        text "Attempts left: [attemps_left]" size 18 color "#000000" text_align 0.5
+    frame:
+        background None
+        align (0.5, 0.4)
+        xysize slider_bar_size
+        image "slider-bar-red.png" at half_size
+
 
     show Droy annoyed
 
