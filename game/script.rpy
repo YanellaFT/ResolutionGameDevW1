@@ -1,9 +1,17 @@
-﻿# The script of the game goes in this file.
+﻿init python:
+    import random
+    bgm_tracks = [
+        "song1.mp3",
+        "song2.mp3",
+        "song3.mp3"
+    ]
+
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("Maya")
+define m = Character("[name]")
 define n = Character("Narrator")
 define ae = Character("Airport Employee")
 define d = Character("Droy")
@@ -14,6 +22,23 @@ default where_to = "0"
 # The game starts here.
 
 label start:
+
+    $ selected_bgm = random.choice(bgm_tracks)
+    play music selected_bgm fadein 1.0
+
+
+    "Welcome to the Adventure!"
+
+    jump question
+
+label question:
+    $name = renpy.input(default='Maya', prompt="What is your name?")
+
+    "Awesome. Welcome to the adventure, [name]. You are the main character."
+
+    jump story
+
+label story:
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -29,7 +54,7 @@ label start:
 
     # These display lines of dialogue.
 
-    n "Maya is stuck in the airport. Her coffee is bad, her phone is at 2 percent, and her flight is delayed, again. "
+    n "[name] is stuck in the airport. Her coffee is bad, her phone is at 2 percent, and her flight is delayed, again. "
 
     n "She is flying to NYC for an important job interview. She had just graduated and really needed this job."
 
@@ -58,7 +83,7 @@ label start:
 
     scene airport two
     
-    n "Maya follows the airport employee to a different part of the terminal."
+    n "[name] follows the airport employee to a different part of the terminal."
 
     ae "Here is the flight to New York. You must board now."
 
@@ -82,7 +107,7 @@ label start:
 
     scene black bg
 
-    n "Maya boards the flight and ..."
+    n "[name] boards the flight and ..."
 
     scene dragonia
 
@@ -134,7 +159,7 @@ label start:
 
     show Maya normal
 
-    n "For the first time since the initial shock, Maya gets to look around at her surroundings and take it all in."
+    n "For the first time since the initial shock, [name] gets to look around at her surroundings and take it all in."
 
     n "There are big green trees everywhere. They have exotic fruits the size of her head growing in all colors. Also on the trees were..."
 
@@ -158,7 +183,7 @@ label start:
 
     show Droy normal
 
-    n "Droy stops abrubtly and turns to Maya, saying:"
+    n "Droy stops abrubtly and turns to [name], saying:"
 
     d "Do you see these trees? These plants? These fruits? Humans destroyed these. We need you to save them."
 
@@ -204,7 +229,7 @@ label start:
 
     m "Well... it wasn't that bad..."
 
-    n "In reality, it kind of was. Maya is huffing and puffing from her attempt."
+    n "In reality, it kind of was. [name] is huffing and puffing from her attempt."
 
     show Droy normal
 
@@ -212,13 +237,13 @@ label start:
 
     scene dragonia house
 
-    n "Droy leads Maya to a little alcove in a tree."
+    n "Droy leads [name] to a little alcove in a tree."
 
     d "This is where you'll rest for the remainder of your stay."
 
     d "I'll meet you at dawn tomorrow."
 
-    n "Maya falls asleep instantly."
+    n "[name] falls asleep instantly."
 
     show black bg
 
@@ -226,7 +251,7 @@ label start:
 
     show dragonia house
 
-    n "The next morning, Maya wakes up a little before dawn."
+    n "The next morning, [name] wakes up a little before dawn."
 
     show Maya tired
 
@@ -301,11 +326,11 @@ label end:
 
     if where_to == "dont_follow_ae":
 
-        n "Maya decides not to follow the airport employee."
+        n "[name] decides not to follow the airport employee."
     
     elif where_to == "dont_board_flight":
 
-        n "Maya rethinks her decision to follow the airport employee and decides not to board this new flight."
+        n "[name] rethinks her decision to follow the airport employee and decides not to board this new flight."
 
     n "She goes back to her seat and waits for her flight."
    
