@@ -6,8 +6,8 @@
         "song3.mp3"
     ]
 
-    def slider_update(sT):
-        pass
+    # def slider_update(sT):
+    #     pass
 
 # The script of the game goes in this file.
 
@@ -108,7 +108,7 @@ label story:
             jump end
 
 
-    scene black bg
+    scene black
 
     n "[name] boards the flight and ..."
 
@@ -225,22 +225,24 @@ label story:
     "Click on the screen only when the slider is in the green zone. You have three attempts to pass this challenge."
 
 
-    #challenge 1: slider challenge to test reactionn
-    $ slider_SM = SpriteManager(update = slider_update)
-    $ slider_sprites = []
-    $ slider_bar_size = (int(545 / 2), int(70 / 2))
+    # #challenge 1: slider challenge to test reactionn
+    # $ slider_SM = SpriteManager(update = slider_update)
+    # $ slider_sprites = []
+    # $ slider_bar_size = (int(545 / 2), int(70 / 2))
 
-    $ attempts_left = 3
-    frame:
-        background "#FFFFFF"
-        padding (5, 5)
-        allign (0.5, 0.3)
-        text "Attempts left: [attemps_left]" size 18 color "#000000" text_align 0.5
-    frame:
-        background None
-        align (0.5, 0.4)
-        xysize slider_bar_size
-        image "slider-bar-red.png" at half_size
+    # $ attempts_left = 3
+    # Frame
+    #     background "#FFFFFF"
+    #     padding (5, 5)
+    #     allign (0.5, 0.3)
+    #     text "Attempts left: [attemps_left]" size 18 color "#000000" text_align 0.5
+    
+    # Frame:
+    #     background None
+    #     align (0.5, 0.4)
+    #     xysize slider_bar_size
+    #     image "slider-bar-red.png" at half_size
+    
 
 
     show Droy annoyed
@@ -267,7 +269,7 @@ label story:
 
     n "[name] falls asleep instantly."
 
-    show black bg
+    show black
 
     "DAY 2"
 
@@ -293,7 +295,7 @@ label story:
 
     d "Your challenge for today is BLANKSS"
 
-    #insert challenge 2 here
+    "[name] does CHallenge 2 well."
 
     show Droy surprised
 
@@ -333,9 +335,33 @@ label story:
 
     d "Indeed you will."
 
-    scene black big
+    scene black
 
     "DAY 3"
+
+    show Maya tired
+
+    m "YAAAWWWwwwnnnnn...."
+
+    d "Wakey, wakey [name]! Guess what your last test is?"
+
+    show Maya thinking
+
+    $ guess = renpy.input(prompt="Hmmm... could it be? ")
+
+    d "Woah. Yes indeed. Lets see how you do your tass: [guess]"
+
+    "[name] does Challenge 3 perfectly."
+
+    show Droy surprised
+
+    d "Wow. Okay. Well I guess you are more qualified for this than I thought!"
+
+    d "Time to get you initiated..."
+
+    "The end."
+
+
 
     # This ends the game. 
 
